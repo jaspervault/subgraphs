@@ -1,1 +1,3 @@
 # subgraphs
+
+yarn build

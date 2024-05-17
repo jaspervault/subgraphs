@@ -1,0 +1,59 @@
+type IssueEvent @entity {
+  id: ID!
+  vault: Bytes!
+  from: Bytes!
+  assets: [Bytes!]!
+  amounts: [BigInt!]!
+  timestamp: BigInt!
+}
+
+type Order @entity {
+  id: ID!
+  holder: Bytes!
+  liquidateMode: Int!
+  writer: Bytes!
+  underlyingAssetType: Int!
+  recipient: Bytes!
+  underlyingAsset: Bytes!
+  strikeAsset: Bytes!
+  underlyingAmount: BigInt!
+  strikeAmount: BigInt!
+  expirationDate: BigInt!
+  underlyingNftID: BigInt!
+}
+
+type CallOrderEntity @entity {
+  id: ID!
+  orderId: BigInt!
+  callOrder: Order!
+  holderWallet: Bytes!
+  writerWallet: Bytes!
+  transactionHash: Bytes!
+  timestamp: BigInt!
+
+}
+
+type PutOrderEntity @entity {
+  id: ID!
+  orderId: BigInt!
+  putOrder: Order!
+  holderWallet: Bytes!
+  writerWallet: Bytes!
+  transactionHash: Bytes!
+  timestamp: BigInt!
+
+}
+
+
+type OptionPremium @entity {
+  id: ID!
+  orderType: Int!
+  orderID: BigInt!
+  writer: Bytes!
+  holder: Bytes!
+  premiumAsset: Bytes!
+  amount: BigInt!
+  transactionHash: Bytes!
+  timestamp: BigInt!
+
+}

@@ -1,0 +1,1144 @@
+[
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "indexed": false,
+                "internalType": "struct IOptionFacet.CallOrder",
+                "name": "_callOrder",
+                "type": "tuple"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_holderWallet",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_writerWallet",
+                "type": "address"
+            }
+        ],
+        "name": "AddCallOrder",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "indexed": false,
+                "internalType": "struct IOptionFacet.PutOrder",
+                "name": "_putOrder",
+                "type": "tuple"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_holderWallet",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_writerWallet",
+                "type": "address"
+            }
+        ],
+        "name": "AddPutOrder",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "indexed": false,
+                "internalType": "struct IOptionFacet.CallOrder",
+                "name": "_callOrder",
+                "type": "tuple"
+            }
+        ],
+        "name": "DeleteCallOrder",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "indexed": false,
+                "internalType": "struct IOptionFacet.PutOrder",
+                "name": "_putOrder",
+                "type": "tuple"
+            }
+        ],
+        "name": "DeletePutOrder",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "_version",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_contract",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "_domain",
+                "type": "bytes32"
+            }
+        ],
+        "name": "SetDomain",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_feeRate",
+                "type": "uint256"
+            }
+        ],
+        "name": "SetFeeRate",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_feeRecipient",
+                "type": "address"
+            }
+        ],
+        "name": "SetFeeRecipient",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_nft",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum IOptionFacet.CollateralNftType",
+                "name": "_type",
+                "type": "uint8"
+            }
+        ],
+        "name": "SetNftType",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            }
+        ],
+        "name": "SetOrderId",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_vault",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum IOptionFacet.OrderType",
+                "name": "_orderType",
+                "type": "uint8"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_underlyingAsset",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "SetSigatureLock",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_vault",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum IOptionFacet.OrderType",
+                "name": "_orderType",
+                "type": "uint8"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_underlyingAsset",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_total",
+                "type": "uint256"
+            }
+        ],
+        "name": "SetUnderlyTotal",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct IOptionFacet.CallOrder",
+                "name": "_callOrder",
+                "type": "tuple"
+            }
+        ],
+        "name": "addCallOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct IOptionFacet.PutOrder",
+                "name": "_putOrder",
+                "type": "tuple"
+            }
+        ],
+        "name": "addPutOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            }
+        ],
+        "name": "deleteCallOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            }
+        ],
+        "name": "deletePutOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            }
+        ],
+        "name": "getCallOrder",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct IOptionFacet.CallOrder",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getDomain",
+        "outputs": [
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getFeeRate",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getFeeRecipient",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_holder",
+                "type": "address"
+            }
+        ],
+        "name": "getHolderCalls",
+        "outputs": [
+            {
+                "internalType": "uint64[]",
+                "name": "",
+                "type": "uint64[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_holder",
+                "type": "address"
+            }
+        ],
+        "name": "getHolderPuts",
+        "outputs": [
+            {
+                "internalType": "uint64[]",
+                "name": "",
+                "type": "uint64[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_nft",
+                "type": "address"
+            }
+        ],
+        "name": "getNftType",
+        "outputs": [
+            {
+                "internalType": "enum IOptionFacet.CollateralNftType",
+                "name": "",
+                "type": "uint8"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getOrderId",
+        "outputs": [
+            {
+                "internalType": "uint64",
+                "name": "",
+                "type": "uint64"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "_orderId",
+                "type": "uint64"
+            }
+        ],
+        "name": "getPutOrder",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "holder",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.LiquidateMode",
+                        "name": "liquidateMode",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "writer",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum IOptionFacet.UnderlyingAssetType",
+                        "name": "underlyingAssetType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "underlyingAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "strikeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "strikeAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "expirationDate",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "underlyingNftID",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct IOptionFacet.PutOrder",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_vault",
+                "type": "address"
+            },
+            {
+                "internalType": "enum IOptionFacet.OrderType",
+                "name": "_orderType",
+                "type": "uint8"
+            },
+            {
+                "internalType": "address",
+                "name": "_underlyingAsset",
+                "type": "address"
+            }
+        ],
+        "name": "getSigatureLock",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_vault",
+                "type": "address"
+            },
+            {
+                "internalType": "enum IOptionFacet.OrderType",
+                "name": "_orderType",
+                "type": "uint8"
+            },
+            {
+                "internalType": "address",
+                "name": "_underlyingAsset",
+                "type": "address"
+            }
+        ],
+        "name": "getUnderlyTotal",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_writer",
+                "type": "address"
+            }
+        ],
+        "name": "getWriterCalls",
+        "outputs": [
+            {
+                "internalType": "uint64[]",
+                "name": "",
+                "type": "uint64[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_writer",
+                "type": "address"
+            }
+        ],
+        "name": "getWriterPuts",
+        "outputs": [
+            {
+                "internalType": "uint64[]",
+                "name": "",
+                "type": "uint64[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_version",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "_contract",
+                "type": "address"
+            }
+        ],
+        "name": "setDomain",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_feeRate",
+                "type": "uint256"
+            }
+        ],
+        "name": "setFeeRate",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_feeRecipient",
+                "type": "address"
+            }
+        ],
+        "name": "setFeeRecipient",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_nft",
+                "type": "address"
+            },
+            {
+                "internalType": "enum IOptionFacet.CollateralNftType",
+                "name": "_type",
+                "type": "uint8"
+            }
+        ],
+        "name": "setNftType",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "setOrderId",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_vault",
+                "type": "address"
+            },
+            {
+                "internalType": "enum IOptionFacet.OrderType",
+                "name": "_orderType",
+                "type": "uint8"
+            },
+            {
+                "internalType": "address",
+                "name": "_underlyingAsset",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "setSigatureLock",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_vault",
+                "type": "address"
+            },
+            {
+                "internalType": "enum IOptionFacet.OrderType",
+                "name": "_orderType",
+                "type": "uint8"
+            },
+            {
+                "internalType": "address",
+                "name": "_underlyingAsset",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_total",
+                "type": "uint256"
+            }
+        ],
+        "name": "setUnderlyTotal",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

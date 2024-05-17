@@ -1,0 +1,11 @@
+{
+  "arbitrum-one": {
+    "IssuanceModule": {
+      "address": "0x9F408f6c9e52c091549F1550e31e8B5621795bE6",
+      "startBlock": 169242519
+    },
+    "Contract": {
+      "address": "0x720a7b1A11B1A14b3E7E12811DfF2cF382997892"
+    }
+  }
+}
